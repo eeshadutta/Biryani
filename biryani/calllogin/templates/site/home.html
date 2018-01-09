@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_register.css' %}" />
+</head>
+
+<body>
+    <div class="login-page">
+        <div class=form">
+            {% if user.is_authenticated %}
+            <p>Hello</p>
+            <p>Welcome {{ user.username }}</p>
+            <p><a href="/logout">Logout</a></p>
+            {% else %}
+            <p><a href="/login">Login</a></p>
+            <p><a href="/register">Register</a></p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

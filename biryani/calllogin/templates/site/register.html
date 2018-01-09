@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_register.css' %}" />
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %} {{ form.as_p }}
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
